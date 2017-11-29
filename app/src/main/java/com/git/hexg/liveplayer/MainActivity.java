@@ -66,6 +66,44 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         fragAdapter = new MainFragAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(fragAdapter);
         viewPager.setCurrentItem(0);
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                refreshTab(position);
+            }
+        });
+    }
+
+    private void refreshTab(int position){
+        switch (position)
+        {
+            case 0:
+                tab1.setTextColor(getResources().getColor(R.color.white));
+                tab1.setBackgroundColor(getResources().getColor(R.color.selected_bg));
+                tab2.setTextColor(getResources().getColor(R.color.black));
+                tab2.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                tab3.setTextColor(getResources().getColor(R.color.black));
+                tab3.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                break;
+            case 1:
+                tab1.setTextColor(getResources().getColor(R.color.black));
+                tab1.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                tab2.setTextColor(getResources().getColor(R.color.white));
+                tab2.setBackgroundColor(getResources().getColor(R.color.selected_bg));
+                tab3.setTextColor(getResources().getColor(R.color.black));
+                tab3.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                break;
+            case 2:
+                tab1.setTextColor(getResources().getColor(R.color.black));
+                tab1.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                tab2.setTextColor(getResources().getColor(R.color.black));
+                tab2.setBackgroundColor(getResources().getColor(R.color.unselected_bg));
+                tab3.setTextColor(getResources().getColor(R.color.white));
+                tab3.setBackgroundColor(getResources().getColor(R.color.selected_bg));
+                break;
+        }
     }
 
     @Override

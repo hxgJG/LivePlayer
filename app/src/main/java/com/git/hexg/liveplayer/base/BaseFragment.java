@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
-    private Activity mActivity;//用mActivity代替getActivity()
+    protected Activity mActivity;//用mActivity代替getActivity()
     public String fragmentTitle;
     private boolean isFragmentVisible;//是否可见状态
     /**

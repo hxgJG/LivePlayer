@@ -55,7 +55,5 @@ public class MoreFragment extends BaseFragment {
     }
 
     @Override
-    protected void setDefaultFragmentTitle(String title) {
-
-    }
+    protected void setDefaultFragmentTitle(String title) {}
 }
